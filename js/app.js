@@ -53,7 +53,7 @@ function successAjax(xhttp) {
     var sender = event.target;
     var talalat = {};
     for (var i = 0; i < spaceships.length; i++) {
-      if (spaceships[i].model.toLowerCase() == searchInput.toLowerCase()) {
+      if (spaceships[i].model.toLowerCase().indexOf(searchInput.toLowerCase()) != -1) {
         talalat = spaceships[i];
         break;
       }
