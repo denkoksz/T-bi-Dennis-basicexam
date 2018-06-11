@@ -19,7 +19,7 @@ _sql/queries.txt_ fileba mentsd el.
  * a három legnagyobb teherbírással (cargo_capacity) rendelkező hajó model (model) nevét, gyártóját(manufacturer), és képét (image)
 3. Kérdezd le 
 * azon hajók model nevét(model), mint Típus, 
-* melyeknél mind a cargo_capacity, passengers, max_atmospheric_speed, és crew, a crew értéke 1,
+* melyeknél mind a cargo_capacity, passengers, max_atmospheric_speed, és crew, a crew értéke 1, // csak a crew, másikat nem kell nézni
 * és a gyártó neve(manufacturer) A-val, B-vel, vagy C-vel kezdődik
 4. Kérdezd le 
 * azon hajók minden adatát, 

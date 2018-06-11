@@ -10,13 +10,20 @@ SELECT model, manufacturer, image from transport
 order by cargo_capacity DESC
 limit 3
 
-/* 3. Kérdezd le 
+/* 3 Kérdezd le 
 * azon hajók model nevét(model), mint Típus, 
 * melyeknél mind a cargo_capacity, passengers, max_atmospheric_speed, és crew, a crew értéke 1,
 * és a gyártó neve(manufacturer) A-val, B-vel, vagy C-vel kezdődik. */
+3/A megoldás: 
 
 select model as Típus from transport
 where cargo_capacity = 1 AND passengers = 1 AND max_atmosphering_speed = 1 AND crew = 1 AND (manufacturer LIKE 'A%' OR manufacturer LIKE 'B%' OR manufacturer like 'C%')
+
+3/B megoldás:
+
+select model as Típus from transport
+where crew = 1 AND (manufacturer LIKE 'A%' OR manufacturer LIKE 'B%' OR manufacturer like 'C%')
+
 
 /* 4. Kérdezd le 
 * azon hajók minden adatát, 
@@ -33,8 +40,16 @@ where manufacturer LIKE '%Corporation%' AND passengers > 0 AND (cost_in_credits 
 * melyeknél a legénység(crew) száma 1 és 5 közötti, 
 * és meg van adva (nem NULL), és nem 0 a passengers, és a cargo_capacity értéke */ 
 
+5/a megoldás
 select model as Megnevezés, manufacturer as Gyártó from transport
 WHERE (crew BETWEEN 1 and 5) AND crew IS NOT NULL AND passengers <> 0 AND cargo_capacity is not null
 GROUP by crew
- /* order by crew */
+order by crew
+limit 3
+
+5/b megoldás
+select model as Megnevezés, manufacturer as Gyártó from transport
+WHERE (crew BETWEEN 1 and 5) AND crew IS NOT NULL AND passengers <> 0 AND passengers is not null AND cargo_capacity is not null AND cargo_capacity <> 0
+GROUP by crew
+order by crew
 limit 3

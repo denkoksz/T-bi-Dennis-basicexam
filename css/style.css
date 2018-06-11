@@ -67,6 +67,7 @@ div{
 
   .one-spaceship{
     width: 25%;
+    color: white;
   }
 
   .container>div{
@@ -78,10 +79,4 @@ div{
     bottom: 20px;
     left: 20px;
   }
-}
-.adatok{
-  float: right;
-}
-.imgDiv{
-  width: 300px;
 }
