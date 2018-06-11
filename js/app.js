@@ -18,6 +18,7 @@ function successAjax(xhttp) {
   // 1. A kapott adatokat rendezd ár(cost_in_creadits) szerint növekvő sorrendbe.
   novekvoSorrend(userDatas);
   consumaleDelete(userDatas);
+  nullToUnknown(userDatas);
 }
 function novekvoSorrend(array){
   for (var i = array.length; i > 0; i--) {
@@ -43,5 +44,16 @@ function consumaleDelete(array){
   console.log(array);
   return array;
 }
-
+// 3. Az összes NULL értéket (minden objektum minden tulajdonságánál) módosítsd "unknown"-ra
+function nullToUnknown(array){
+  for(var i = 0; i < array.length; i++){
+    for(var j in array[i]){
+      if(array[i][j] == null){
+        array[i][j] = "unknown";
+      }
+    }
+  }
+  console.log(array);
+  return array;
+}
 getData('/json/spaceships.json', successAjax);
