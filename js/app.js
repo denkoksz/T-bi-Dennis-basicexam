@@ -128,7 +128,7 @@ function createDivs(array) {
     var portraitAdatok = document.createElement('div');
     var adatok = "";
     var imgDiv = document.createElement('div');
-    portraitAdatok.setAttribute('class', 'adatok');
+    portrait.setAttribute('class', 'adatok');
     imgX.setAttribute('src', "\/img/" + array[i].image);
     imgX.setAttribute('alt', "");
     imgX.setAttribute('class', 'portraitimg')
@@ -162,7 +162,7 @@ function egyFosLegenyseg(array) {
     }
   }
   var egyFosLegenyseg = document.createElement('p');
-  egyFosLegenyseg.innerHTML = 'Az egy fős legénységgel rendelkező űrhajók száma: ' + count;
+  egyFosLegenyseg.innerHTML = 'Egy fős (crew = 1) legénységgel rendelkező hajók darabszáma:  ' + count;
   mainDiv.appendChild(egyFosLegenyseg);
   console.log(count);
   return count;
@@ -178,7 +178,7 @@ function legNagyobbHajo(array) {
     }
   }
   var legNagyobbHajoNeve = document.createElement('p');
-  legNagyobbHajoNeve.innerHTML = 'A legnagyobb cargo capacityvel rendelkező hajó model neve: ' + nev;
+  legNagyobbHajoNeve.innerHTML = 'A legnagyobb cargo_capacity-vel rendelkező hajó neve (model):  ' + nev;
   mainDiv.appendChild(legNagyobbHajoNeve);
   console.log(nev);
   return nev;
@@ -194,7 +194,7 @@ function osszesUtasSzama(array) {
     }
   }
   var osszesUtasSzama = document.createElement('p');
-  osszesUtasSzama.innerHTML = 'Az összes utas száma : ' + osszesUtas;
+  osszesUtasSzama.innerHTML = 'Az összes hajó utasainak (passengers) összesített száma: ' + osszesUtas;
   mainDiv.appendChild(osszesUtasSzama);
   console.log(osszesUtas);
   return osszesUtas;
@@ -214,7 +214,7 @@ function legHosszabbHajo(array) {
   legHosszabbHajoKepe += hajo.image
   var divX = document.createElement('div');
   var imgX = document.createElement('img');
-  divX.innerHTML = 'A leghoszabb model képe: '
+  divX.innerHTML = 'A leghosszabb(lengthiness) hajó képe:  '
   mainDiv.appendChild(divX);
   imgX.setAttribute('src', legHosszabbHajoKepe);
   divX.appendChild(imgX);

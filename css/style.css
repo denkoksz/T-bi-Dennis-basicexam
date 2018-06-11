@@ -1,6 +1,12 @@
+@font-face {
+  font-family: starwars;
+  src: url(starjedi.ttf);
+}
+
 body{
   margin:0;
   font-size: 16px;
+  font-family: starwars;
 }
 
 div{
@@ -79,4 +85,15 @@ div{
     bottom: 20px;
     left: 20px;
   }
+}
+.adatok {
+  border: 1px solid yellow;
+  margin: 5px;
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+.imgDiv{
+  float: left;
 }
