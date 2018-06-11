@@ -12,7 +12,7 @@ function getData(url, callbackFunc) {
 function successAjax(xhttp) {
   // Innen lesz elérhető a JSON file tartalma, tehát az adatok amikkel dolgoznod kell
   var userDatas = JSON.parse(xhttp.responseText);
-  
+  console.log(userDatas);
 }
 
 getData('/json/spaceships.json', successAjax);

@@ -1,7 +1,4 @@
-[
-{"type":"header","version":"4.7.9","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"starwars"},
-{"type":"table","name":"transport","database":"starwars","data":
+
 [
 {"id":"1","consumables":"1 year","denomination":"CR90 corvette","cargo_capacity":"3000000","passengers":"600","max_atmosphering_speed":"950","crew":"165","lengthiness":"150","model":"CR90 corvette","cost_in_credits":"3500000","manufacturer":"Corellian Engineering Corporation","image":"cr90_corvette.jpg"},
 {"id":"2","consumables":"2 years","denomination":"Star Destroyer","cargo_capacity":"36000000","passengers":null,"max_atmosphering_speed":"975","crew":"47","lengthiness":"2","model":"Imperial I-class Star Destroyer","cost_in_credits":"150000000","manufacturer":"Kuat Drive Yards","image":"star_destroyer.jpg"},
@@ -79,5 +76,4 @@
 {"id":"74","consumables":"15 hours","denomination":"V-wing","cargo_capacity":"60","passengers":"0","max_atmosphering_speed":"1050","crew":"1","lengthiness":"43290","model":"Alpha-3 Nimbus-class V-wing starfighter","cost_in_credits":"102500","manufacturer":"Kuat Systems Engineering","image":"v-wing.jpg"},
 {"id":"75","consumables":"1 day","denomination":"AT-RT","cargo_capacity":"20","passengers":"0","max_atmosphering_speed":"90","crew":"1","lengthiness":"43161","model":"All Terrain Recon Transport","cost_in_credits":"40000","manufacturer":"Kuat Drive Yards","image":"at-rt.jpg"}
 ]
-}
-]
+
