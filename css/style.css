@@ -79,3 +79,9 @@ div{
     left: 20px;
   }
 }
+.adatok{
+  float: right;
+}
+.imgDiv{
+  width: 300px;
+}
