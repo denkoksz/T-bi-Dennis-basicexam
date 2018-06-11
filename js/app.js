@@ -14,6 +14,7 @@ function getData(url, callbackFunc) {
 function successAjax(xhttp) {
   // Innen lesz elérhető a JSON file tartalma, tehát az adatok amikkel dolgoznod kell
   var userDatas = JSON.parse(xhttp.responseText);
+
   // 1. A kapott adatokat rendezd ár(cost_in_creadits) szerint növekvő sorrendbe.
   function novekvoSorrend() {
     var nullCredit = [];
@@ -39,13 +40,18 @@ function successAjax(xhttp) {
     console.log(userDatas);
     return userDatas;
   }
+
   novekvoSorrend();
   consumaleDelete(userDatas);
-
   var spaceships = nullToUnknown(userDatas); // ez a tömb amivel tovább kell dolgoznom;
-  console.log(spaceships);
-  console.log(parseInt(spaceships[0].cargo_capacity) + 100);
   createDivs(spaceships);
+
+  /*6. A jobb oldalon található keresősáv segítségével legyen lehetőség a hajókra rákeresni _model_ szerint. 
+   * A keresés kattintásra induljon
+   * A keresés nem case sensitive
+   * Nem csak teljes egyezést vizsgálunk, tehát ha a keresett szöveg szerepel a hajó nevében már az is találat
+   * Ha több találatunk is lenne, nem foglalkozunk velük, az első találat eredményét (tehát az első megfelelő névvel rendelkező hajó adatait) adjuk vissza.
+   * Az adott hajó adatait a one-spaceship class-ű div-be kell megjeleníteni rendezett formában, képpel együtt. */
 
   var objSearchButton = document.getElementById('search-button');
   objSearchButton.addEventListener('click', function () {
@@ -61,12 +67,6 @@ function successAjax(xhttp) {
     intoSideDiv(talalat);
 
   });
-  /*6. A jobb oldalon található keresősáv segítségével legyen lehetőség a hajókra rákeresni _model_ szerint. 
-   * A keresés kattintásra induljon
-   * A keresés nem case sensitive
-   * Nem csak teljes egyezést vizsgálunk, tehát ha a keresett szöveg szerepel a hajó nevében már az is találat
-   * Ha több találatunk is lenne, nem foglalkozunk velük, az első találat eredményét (tehát az első megfelelő névvel rendelkező hajó adatait) adjuk vissza.
-   * Az adott hajó adatait a one-spaceship class-ű div-be kell megjeleníteni rendezett formában, képpel együtt. */
 
   egyFosLegenyseg(spaceships);
   legNagyobbHajo(spaceships);
@@ -105,6 +105,7 @@ function consumaleDelete(array) {
   console.log(array);
   return array;
 }
+
 // 3. Az összes NULL értéket (minden objektum minden tulajdonságánál) módosítsd "unknown"-ra
 function nullToUnknown(array) {
   var urhajok = [];
